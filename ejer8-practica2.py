@@ -1,5 +1,7 @@
 import string
 def crear_tabla():
+    """ creamos un una tabla de valores asosciados a cada una delasletras del abecedario"""
+
     puntos = [("A","E","I","O","U","L","N","S","T",1),
               ("D","G",2),
               ("B","C","M","P",3),
@@ -15,12 +17,14 @@ def crear_tabla():
     return tabla_valores
 
 def evaluo(palabra,tabla):
+    """califica la palabra ingresada , evaluando cada una de sus letras y retorna la suma del puntaje""" 
     total = 0
     for letra in palabra:
         total += tabla[letra]
     return total
 
 def cumple(palabra,letras):
+    """ evalua si la palabra ingresada solo contiene caracteres, creo que la puedo mejorar"""
     ok = True
     cant = 0
     while ok and cant < len(palabra):

@@ -36,11 +36,14 @@ def agrupo_info(notas1,notas2,nombres_limpios):
         ficha_datos.append(alumno)
         indice += 1
     return (ficha_datos,total)
+
+
 def main():
     notas1,notas2,nombres = abrir_archivos()
     evaluacion_1 = extraer_info(notas1)
     evaluacion_2 = extraer_info(notas2)
     nombres_limpios = extraer_nombres(nombres)
+    
     datos_alumnos,total = agrupo_info(evaluacion_1,evaluacion_2,nombres_limpios)
 
     if len(datos_alumnos) >0:

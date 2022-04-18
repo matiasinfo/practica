@@ -18,17 +18,22 @@ def abrir_archivos():
         nombres1 = puntero1.read()
     with open (archivo_nombres2,encoding="utf8") as puntero2: 
         nombres2 = puntero2.read()
-    return (notas1,notas2,nombres1,nombres2)            
+    
+    return (notas1,notas2,nombres1,nombres2)  
+    
+              
 def limpiar_datos(nombres1,nombres2,notas1,notas2):
     nombres1_limpios = extraer_nombres(nombres1)
     nombres2_limpios = extraer_nombres(nombres2)
     notas1_limpias = extraer_info(notas1)
     notas2_limpias = extraer_info(notas2)
+    
     return(nombres1_limpios,nombres2_limpios,notas1_limpias,notas2_limpias)
+
+
 def main():
     notas1,notas2,nombres1,nombres2 = abrir_archivos()
     nom1,nom2,not1,not2 = limpiar_datos(nombres1,nombres2,notas1,notas2)
-
     nombres_repetidos = set([elem  for elem in nom1 if elem in nom1 and elem in nom2])
     print(f'estos son los nombres que aparecen en ambas listas : {nombres_repetidos}')
     i = 0
